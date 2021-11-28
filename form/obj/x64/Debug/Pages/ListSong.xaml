@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="form.Pages.ListSong"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:form.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:entities="using:form.Entities"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel>
+        <ScrollViewer MaxHeight="620">
+            <StackPanel>
+                <ListView x:ConnectionId='3' x:Name="MyListView"                           >
+                    <ListView.ItemTemplate>
+                        <DataTemplate                           >
+                            <Grid x:ConnectionId='5'>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse x:Name="Ellipse" Grid.RowSpan="2" Width="70" Height="70" Margin="6" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Ellipse.Fill>
+                                        <ImageBrush x:ConnectionId='9'                                 />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <TextBlock x:ConnectionId='7' Grid.Column="1"                                  Style="{ThemeResource BaseTextBlockStyle}" Margin="12,6,0,0"/>
+                                <TextBlock x:ConnectionId='8' Grid.Column="1" Grid.Row="1"                                    Style="{ThemeResource BodyTextBlockStyle}" Margin="12,0,0,6"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+        <ListView>
+            <MediaPlayerElement x:ConnectionId='2' x:Name="MyMediaPlayer" Source="https://res.cloudinary.com/cuong0508/video/upload/v1637120579/EDM/y2mate.com_-_Adriana_Gomez%E1%B4%B8%CA%B8%CA%B3%E1%B6%A6%E1%B6%9CTrap_Queen_Top_Nh%E1%BA%A1c_Tik_Tok_Th%C3%A1ng_10_Eightfold_MKJ_Remix_146_hxib7x.mp3" AreTransportControlsEnabled="True" AutoPlay="True"/>
+        </ListView>
+    </StackPanel>
+</Page>
+
